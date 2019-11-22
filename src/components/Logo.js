@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-const AppLogo = styled.h1`
-  font-family: "Dancing Script", cursive;
-  color: #dd8833;
-  margin: 0;
-  padding: 20px;
-  text-shadow: 3px 3px 4px #777;
-  font-size: 25px;
+const TitleImage = styled.img`
+  padding: 10px;
+  margin: 10px;
 `;
 
 export default function Logo() {
-  return <AppLogo>Let the Magic happen</AppLogo>;
+  return (
+    <TitleImage src="https://fontmeme.com/permalink/191122/ff54ead39b676a904b4573b78a8334a3.png" />
+  );
 }
