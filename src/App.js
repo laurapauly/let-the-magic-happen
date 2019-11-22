@@ -1,5 +1,15 @@
 import React from "react";
 
-function App() {}
+import GlobalStyles from "./components/GlobalStyles.js";
+
+function App() {
+  return (
+    <>
+      <GlobalStyles />
+      <header>Logo + Title</header>
+      <main>Books</main>
+    </>
+  );
+}
 
 export default App;
