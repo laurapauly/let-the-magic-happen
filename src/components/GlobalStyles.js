@@ -13,8 +13,8 @@ export default function GlobalStyles() {
         body {
           margin: 0;
           font-family: "Open Sans Condensed", sans-serif;
-          background: #665849;
-          color: #eaead5;
+          background: #eaead5;
+          color: #006837;
         }
       `}
     />
