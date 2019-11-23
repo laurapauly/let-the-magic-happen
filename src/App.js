@@ -1,11 +1,10 @@
 import React from "react";
 import GlobalStyles from "./components/GlobalStyles.js";
 import Header from "./components/Header.js";
-import CharacterList from "./components/Main.js";
 import Search from "./components/Search.js";
 import SearchButton from "./components/SearchButton.js";
 import styled from "@emotion/styled";
-import AllCharacters from "./components/AllCharacters.js";
+import CharacterList from "./components/Main";
 
 const SearchBar = styled.div`
   display: flex;
@@ -22,7 +21,6 @@ function App() {
           <Search></Search>
           <SearchButton></SearchButton>
         </SearchBar>
-        <AllCharacters />
         <CharacterList />
       </main>
     </>

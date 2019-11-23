@@ -9,11 +9,32 @@ const ClickButton = styled.button`
   margin-top: 20px;
   margin-left: 20px;
   border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
 `;
 
 const ButtonIcon = styled.img`
   width: 20px;
   height: 20px;
+
+  :hover {
+    animation: pulse 1s infinite;
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0.75);
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 `;
 
 export default function Searchbutton() {

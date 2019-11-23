@@ -1,7 +1,7 @@
 import React from "react";
 // import getHPCharacters from "../api/Characters.js";
 import styled from "@emotion/styled";
-import CharacterCard from "./Cards";
+import AllCharacters from "./Cards";
 
 const MainField = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ const MainField = styled.div`
 export default function CharacterList() {
   return (
     <MainField>
-      <CharacterCard />
+      <AllCharacters />
     </MainField>
   );
 }

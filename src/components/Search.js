@@ -8,6 +8,9 @@ const SearchInput = styled.input`
   margin-left: 20px;
   background-color: #eeba30;
   border: none;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
 `;
 
 export default function Search() {
