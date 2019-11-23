@@ -16,9 +16,12 @@ const Poster = styled.img`
 
 export default function AllCharacters() {
   const [characters, setCharacters] = React.useState([]);
+  const [loading, setLoading] = React.useState([]);
 
   async function refreshCharacters() {
+    setLoading(true);
     const discoverCharacters = await getHPCharacters();
+    setLoading(false);
     setCharacters(discoverCharacters);
   }
 
@@ -28,6 +31,7 @@ export default function AllCharacters() {
 
   return (
     <List>
+      {loading && <div>Alohomora</div>}
       {characters.map(character => (
         <Poster
           key={character.name}

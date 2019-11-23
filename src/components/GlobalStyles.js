@@ -12,9 +12,9 @@ export default function GlobalStyles() {
         }
         body {
           margin: 0;
-          font-family: "Open Sans Condensed", sans-serif;
+          font-family: "Playfair Display", serif;
           background-color: #740001;
-          color: #006837;
+          color: black;
         }
       `}
     />
