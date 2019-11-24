@@ -3,11 +3,12 @@ import styled from "@emotion/styled";
 import magicWand from "../assets/magic-wand.svg";
 
 const ClickButton = styled.button`
-  width: 50px;
+  width: 40px;
   height: 30px;
   background-color: black;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   border: none;
   outline: none;
   border-radius: 5px;
@@ -16,7 +17,7 @@ const ClickButton = styled.button`
 
 const ButtonIcon = styled.img`
   width: 20px;
-  height: 20px;
+  height: 30px;
 
   :hover {
     animation: pulse 1s infinite;
@@ -37,9 +38,9 @@ const ButtonIcon = styled.img`
   }
 `;
 
-export default function Searchbutton() {
+export default function Searchbutton({ onClick }) {
   return (
-    <ClickButton>
+    <ClickButton onClick={onClick}>
       <ButtonIcon src={magicWand} />
     </ClickButton>
   );

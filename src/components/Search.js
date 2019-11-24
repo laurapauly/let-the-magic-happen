@@ -13,6 +13,11 @@ const SearchInput = styled.input`
   outline: none;
 `;
 
-export default function Search() {
-  return <SearchInput placeholder="Expecto Patronum..."></SearchInput>;
+export default function Search({ onInput }) {
+  return (
+    <SearchInput
+      onInput={onInput}
+      placeholder="Expecto Patronum..."
+    ></SearchInput>
+  );
 }

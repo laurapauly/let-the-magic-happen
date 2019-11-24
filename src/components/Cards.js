@@ -1,19 +1,18 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import getHPCharacters from "../api/Characters";
-
 const List = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
 `;
 
 const CharacterTag = styled.div`
   display: flex;
   flex-direction: column;
   height: 300px;
-  width: 100px;
+  width: 120px;
   justify-content: center;
   align-items: center;
   margin: 20px;
@@ -24,11 +23,14 @@ const CharacterTag = styled.div`
   font-size: 15px;
 `;
 
-const CharacterTitle = styled.h4``;
+const CharacterTitle = styled.h3`
+  font-size: 12px;
+`;
 
 const CharacterImage = styled.img`
   width: 80%;
-  height: 90px;
+  height: 130px;
+  border-radius: 5px;
 `;
 
 const CharacterHouse = styled.div`
@@ -43,21 +45,7 @@ const CharacterPatronus = styled.div`
   font-size: 10px;
 `;
 
-export default function AllCharacters() {
-  const [characters, setCharacters] = React.useState([]);
-  const [loading, setLoading] = React.useState([]);
-
-  async function refreshCharacters() {
-    setLoading(true);
-    const discoverCharacters = await getHPCharacters();
-    setLoading(false);
-    setCharacters(discoverCharacters);
-  }
-
-  React.useEffect(() => {
-    refreshCharacters();
-  }, []);
-
+export default function AllCharacters({ loading, characters }) {
   return (
     <List>
       {loading && <div>Alohomora</div>}
@@ -73,14 +61,3 @@ export default function AllCharacters() {
     </List>
   );
 }
-
-// export default function CharacterCard() {
-//   return (
-//     <CharacterTag>
-//       <CharacterImage></CharacterImage>
-//       <CharacterTitle>Harry</CharacterTitle>
-//       <CharacterHouse>Gryffindor</CharacterHouse>
-//       <CharacterActor>Daniel Radcliff</CharacterActor>
-//     </CharacterTag>
-//   );
-// }
