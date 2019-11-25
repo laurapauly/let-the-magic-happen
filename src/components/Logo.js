@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 const TitleImage = styled.img`
   padding: 10px;
-  margin: 10px;
+  margin: 5px;
 `;
 
 export default function Logo() {
