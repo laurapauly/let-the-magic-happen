@@ -50,7 +50,7 @@ export default function AllCharacters({ loading, characters }) {
     <List>
       {loading && <div>Alohomora</div>}
       {characters.map(character => (
-        <CharacterTag>
+        <CharacterTag key={character.name}>
           <CharacterImage src={character.image} alt={character.actor} />
           <CharacterTitle>{character.name}</CharacterTitle>
           <CharacterPatronus>Patronus: {character.patronus}</CharacterPatronus>
