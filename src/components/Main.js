@@ -18,7 +18,7 @@ const MainField = styled.div`
   flex-wrap: wrap;
 `;
 
-export default function Main() {
+export default function Main({ onClick }) {
   const [characters, setCharacters] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [inputValue, setInputValue] = React.useState("");
@@ -58,6 +58,7 @@ export default function Main() {
         <Search onInput={onInputChanged}></Search>
         <SearchButton onClick={filter}></SearchButton>
       </SearchBar>
+
       <MainField>
         <AllCharacters loading={loading} characters={characters} />
       </MainField>
