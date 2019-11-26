@@ -3,7 +3,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import AllCharacters from "./Cards";
 import getHPCharacters from "../api/Characters.js";
-import GlobalStyles from "./GlobalStyles.js";
+import GlobalStyles from "../utils/GlobalStyles.js";
 import Header from "./Header.js";
 import Search from "./Search.js";
 import SearchButton from "./SearchButton.js";
@@ -17,27 +17,6 @@ const MainField = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
 `;
-
-// const CharacterImage = styled.img``;
-
-// export default function CharactersList() {
-//   const [characters, setCharacters] = React.useState([]);
-
-//   async function refreshCharacters() {
-//     const searchCharacters = await getHPCharacters;
-//     setCharacters(searchCharacters);
-//   }
-
-//   return (
-//     <CharacterTag>
-//       {/* {characters.map(character => (
-//         <div key={character.id}>
-//           <CharacterImage src={character.img} alt={character.name} />
-//         </div>
-//       ))} */}
-//     </CharacterTag>
-//   );
-// }
 
 export default function Main() {
   const [characters, setCharacters] = React.useState([]);
@@ -75,15 +54,17 @@ export default function Main() {
       <GlobalStyles />
       <Header />
 
-      <main>
-        <SearchBar>
-          <Search onInput={onInputChanged}></Search>
-          <SearchButton onClick={filter}></SearchButton>
-        </SearchBar>
-        <MainField>
-          <AllCharacters loading={loading} characters={characters} />
-        </MainField>
-      </main>
+      <SearchBar>
+        <Search onInput={onInputChanged}></Search>
+        <SearchButton onClick={filter}></SearchButton>
+      </SearchBar>
+      <MainField>
+        <AllCharacters loading={loading} characters={characters} />
+      </MainField>
     </>
   );
 }
+
+// Nur das 1. Wort in der Suche großschreiben:
+// const value= event.target.value;
+// const newSearchValue = value.charAt(0) + value.slice(1)

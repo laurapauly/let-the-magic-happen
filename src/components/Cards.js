@@ -16,9 +16,9 @@ const CharacterTag = styled.div`
   justify-content: center;
   align-items: center;
   margin: 20px;
-  color: #740001;
+  color: ${props => props.theme.backgroundcolor};
   border-radius: 10px;
-  background-color: black;
+  background-color: ${props => props.theme.secondcolor};
   text-align: center;
   font-size: 15px;
 `;
@@ -49,9 +49,13 @@ export default function AllCharacters({ loading, characters }) {
   return (
     <List>
       {loading && <div>Alohomora</div>}
-      {characters.map(character => (
+      {characters.map((character, index) => (
         <CharacterTag key={character.name}>
-          <CharacterImage src={character.image} alt={character.actor} />
+          <CharacterImage
+            src={character.image}
+            alt={character.actor}
+            onClick={() => console.log("image clicked", character.house, index)}
+          />
           <CharacterTitle>{character.name}</CharacterTitle>
           <CharacterPatronus>Patronus: {character.patronus}</CharacterPatronus>
           <CharacterHouse>House: {character.house}</CharacterHouse>
