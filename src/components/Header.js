@@ -4,7 +4,7 @@ import Logo from "./Logo.js";
 import magic from "../assets/magic.svg";
 
 const AppBar = styled.header`
-  background-color: black;
+  background-color: ${props => props.theme.secondcolor};
   height: 70px;
   width: 100%;
   display: flex;

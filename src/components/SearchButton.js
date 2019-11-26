@@ -5,7 +5,7 @@ import magicWand from "../assets/magic-wand.svg";
 const ClickButton = styled.button`
   width: 40px;
   height: 30px;
-  background-color: black;
+  background-color: ${props => props.theme.secondcolor};
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
